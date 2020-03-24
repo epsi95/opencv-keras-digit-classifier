@@ -74,11 +74,12 @@ while True:
                 (TLp3[0] + 20, TLp3[1] + 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 2) # status update space text
 
     # color range for detection
+    # find more here: https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
     blueLower = (110, 50, 50)
     blueUpper = (130, 255, 255)
     blurred = cv2.GaussianBlur(frame, (11, 11), 0)
     hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
-    # construct a mask for the color "green", then perform
+    # construct a mask for the color "blue", then perform
     # a series of dilations and erosions to remove any small
     # blobs left in the mask
     mask = cv2.inRange(hsv, blueLower, blueUpper)
